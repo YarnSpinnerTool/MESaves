@@ -704,8 +704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02abfc903e4b2455fab6afafeb578a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  variableData: {fileID: 11400000, guid: a86568fdc245545f1a6c191583404be3, type: 2}
-  dialogueRunner: {fileID: 609015104}
   saveData: {fileID: -5154315610746923307, guid: 0f2580b82a5a14bcb894c3f12eb9a233, type: 3}
 --- !u!4 &1283136869
 Transform:
