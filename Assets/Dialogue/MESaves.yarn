@@ -1,4 +1,25 @@
 ﻿title: NPC
 ---
-NPC: Wow nice one commander
+
+=> NPC: Wow {get_me_name()} you killed that council dead <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Dead>>
+=> NPC: Nice one on saving the council, {get_me_name()} <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Alive>>
+
+=> NPC: Shame about Williams though <<if $LE2_ME1_Plots_for_ME2_CH2_Virmire_Ash_died>>
+=> NPC: Shame about Alenko though <<if $LE2_ME1_Plots_for_ME2_CH2_Virmire_Kaidan_died>>
+
+<<if $LE1_Light_Content_Subplots_SP102_MonkeyFun_UNC84_Light_Content_Microplot_EasterEgg>>
+    NPC: Hey did you activate that weird prothean orb on Eletania using the trinket that the asari consort Shi'ara gave you?
+    NPC: Wild times
+<<endif>>
+
+<<if $LE1_Light_Content_Subplots_Collection_Quest_Asari_Writings_Asari_Writings >= 16>>
+    NPC: Whoa you collected all of Matriarch Dilinaga's writings
+    NPC: That might be important later
+<<endif>>
+
+[character name="NPC"]NPC: [/]Your morality scores are: Paragon: {$LE2_Utility_Player_Info_Paragon}, Renegade: {$LE2_Utility_Player_Info_Renegade}
+
+-> Paragon Choice <<if $LE2_Utility_Player_Info_Paragon > 600>> #paragon
+-> Renegade Choice <<if $LE2_Utility_Player_Info_Renegade > 600>> #renegade
+-> Neutral Choice
 ===

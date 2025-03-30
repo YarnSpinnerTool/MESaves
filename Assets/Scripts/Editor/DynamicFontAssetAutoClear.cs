@@ -1,9 +1,11 @@
-// TextMeshPro dynamic font assets have a very annoying habit of saving their dynamically generated binary data in the
-// same text file as their configuration data. This causes massive headaches for version control.
+// TextMeshPro dynamic font assets have a very annoying habit of saving their
+// dynamically generated binary data in the same text file as their
+// configuration data. This causes massive headaches for version control.
 //
-// This script addresses the above issue. It runs whenever any assets in the project are about to be saved. If any of
-// those assets are a TMP dynamic font asset, they will have their dynamically generated data cleared before they are
-// saved, which prevents that data from ever polluting the version control.
+// This script addresses the above issue. It runs whenever any assets in the
+// project are about to be saved. If any of those assets are a TMP dynamic font
+// asset, they will have their dynamically generated data cleared before they
+// are saved, which prevents that data from ever polluting the version control.
 //
 // For more information, see this thread: https://discussions.unity.com/t/868941
 
@@ -15,7 +17,7 @@ using UnityEditor;
 
 internal class DynamicFontAssetAutoClear : AssetModificationProcessor
 {
-    static string[] OnWillSaveAssets(string[] paths)
+    protected static string[] OnWillSaveAssets(string[] paths)
     {
         foreach (string path in paths)
         {
