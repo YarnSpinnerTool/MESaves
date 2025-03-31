@@ -2,7 +2,7 @@
 
 Mass Effect 2 Save Importer for Yarn Spinner is an example Unity project that demonstrates reading save-game files from *Mass Effect 2: Legendary Edition*. Using the importer, games can import save games, and make use of the player's current state.
 
-Mass Effect 2 Save Importer for Yarn Spinner requires Unity 6 and [Yarn Spinner 3](https://docs.yarnspinner.dev/coming-in-v3#installing-the-beta-in-unity).
+Mass Effect 2 Save Importer for Yarn Spinner requires Unity 6 and [Yarn Spinner 3](https://docs.yarnspinner.dev/coming-in-v3#installing-the-beta-in-unity) (currently in Beta).
 
 ## Demonstration
 
