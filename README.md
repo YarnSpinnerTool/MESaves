@@ -24,8 +24,8 @@ After a save file has been loaded, Yarn Spinner scripts can access information c
 To use a plot variable in your Yarn script, simply use it like you would any other Yarn variable.
 
 ```
-=> NPC: Wow, Shepard! I can't believe you let the Council die! <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Dead>>
-=> NPC: Nice one on saving the council, Shepard! <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Alive>>
+=> NPC: Wow, Shepard! I can't believe you chose Morinth over Samara! <<if $MassEffect2_Companions_Samara_LoyaltyMission_ChoseMorinth>>
+=> NPC: Nice one siding with Samara, Shephard!<<if $MassEffect2_Companions_Samara_LoyaltyMission_ChoseSamara>>
 ```
 
 You can also retrieve the first name of the player character like this:
@@ -63,16 +63,16 @@ Some useful examples of variables:
   - `$MassEffect2_Companions_Thane_InSquad`
   - `$MassEffect2_Companions_Wilson_InSquad`
   - `$MassEffect2_Companions_Zaeed_InSquad`
-  - There are similar variables for controlling whether a character's loyalty mission has been completed, or whether they have been killed.
-- Specific outcomes for storylines can be read. For example, the outcome of Tali's treason trial can be fetched via the following variables:
-  - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Gave_Evidence`
-  - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Pled_Guilty`
-  - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Innocent_Charmed`
-  - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Innocent_Intimidate`
+  - There are similar variables for controlling whether a character's loyalty mission has been completed (`$MassEffect2_Companions_<name>_IsLoyal`), or whether they have been killed (`$MassEffect2_Companions_<name>_IsDead`).
+- Specific outcomes for storylines can be read. For example, the outcome of Tali's treason trial can be fetched via the following boolean variables (exactly one of which will be true if the `$MassEffect2_Companions_Tali_LoyaltyMission_Trial_Resolution` variable is true, declaring that this arc was completed):
+  - `$MassEffect2_Companions_Tali_LoyaltyMission_Trial_Resolution_GaveEvidence`
+  - `$MassEffect2_Companions_Tali_LoyaltyMission_Trial_Resolution_InnocentCharmed`
+  - `$MassEffect2_Companions_Tali_LoyaltyMission_Trial_Resolution_InnocentIntimidate`
+  - `$MassEffect2_Companions_Tali_LoyaltyMission_Trial_Resolution_PledGuilty`
 
 The names of the variables are adapted from [Electronic Arts' release of the Mass Effect plot databases](https://github.com/electronicarts/MELE_ModdingSupport/). 
 
-## Performance
+## A Note on Performance
 
 The `GeneratedVariables.yarn` file is very large, and can cause long compilation times for your Yarn scripts. You can speed up compilation by removing the variables you don't need from the file.
 

@@ -1,18 +1,18 @@
 ﻿title: NPC
 ---
 
-=> NPC: Wow {get_me_name()} you killed that council dead <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Dead>>
-=> NPC: Nice one on saving the council, {get_me_name()} <<if $LE2_ME1_Plots_for_ME2_CH4_Star_Citadel_Council_Alive>>
+=> NPC: Wow {get_me_name()} you killed that council dead <<if $MassEffect2_SaveImportME1_StarCitadel_CouncilDead>>
+=> NPC: Nice one on saving the council, {get_me_name()} <<if $MassEffect2_SaveImportME1_StarCitadel_CouncilAlive>>
 
-=> NPC: Shame about Williams though <<if $LE2_ME1_Plots_for_ME2_CH2_Virmire_Ash_died>>
-=> NPC: Shame about Alenko though <<if $LE2_ME1_Plots_for_ME2_CH2_Virmire_Kaidan_died>>
+=> NPC: Shame about Williams though <<if $MassEffect2_SaveImportME1_Virmire_AshDied >>
+=> NPC: Shame about Alenko though <<if $MassEffect2_SaveImportME1_Virmire_KaidanDied>>
 
-<<if $LE1_Light_Content_Subplots_SP102_MonkeyFun_UNC84_Light_Content_Microplot_EasterEgg>>
-    NPC: Hey did you activate that weird prothean orb on Eletania using the trinket that the asari consort Shi'ara gave you?
+<<if $MassEffect1_Subplots_MonkeyFun_EasterEggFound>>
+    NPC: Hey, remember when you activated that weird prothean orb on Eletania using the trinket that the asari consort Shi'ara gave you?
     NPC: Wild times
 <<endif>>
 
-<<if $LE1_Light_Content_Subplots_Collection_Quest_Asari_Writings_Asari_Writings >= 16>>
+<<if $MassEffect1_Collectables_AsariWritings_NumAsariWritings >= 16>>
     NPC: Whoa you collected all of Matriarch Dilinaga's writings
     NPC: That might be important later
 <<endif>>
