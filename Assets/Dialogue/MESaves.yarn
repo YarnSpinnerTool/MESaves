@@ -17,9 +17,9 @@
     NPC: That might be important later
 <<endif>>
 
-[character name="NPC"]NPC: [/]Your morality scores are: Paragon: {$LE2_Utility_Player_Info_Paragon}, Renegade: {$LE2_Utility_Player_Info_Renegade}
+[character name="NPC"]NPC: [/]Your morality scores are: Paragon: {$MassEffect2_PlayerInfo_ParagonPoints}, Renegade: {$MassEffect2_PlayerInfo_RenegadePoints}
 
--> Paragon Choice <<if $LE2_Utility_Player_Info_Paragon > 600>> #paragon
--> Renegade Choice <<if $LE2_Utility_Player_Info_Renegade > 600>> #renegade
+-> Paragon Choice <<if $MassEffect2_PlayerInfo_ParagonPoints > 600>> #paragon
+-> Renegade Choice <<if $MassEffect2_PlayerInfo_RenegadePoints > 600>> #renegade
 -> Neutral Choice
 ===

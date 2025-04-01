@@ -4,7 +4,7 @@ Mass Effect 2 Save Importer for Yarn Spinner is an example Unity project that de
 
 Mass Effect 2 Save Importer for Yarn Spinner requires Unity 6 and [Yarn Spinner 3](https://docs.yarnspinner.dev/coming-in-v3#installing-the-beta-in-unity) (currently in Beta).
 
-## Demonstration
+## Demo Project
 
 - Open the project in Unity 6, and open the scene `SaveLoader.unity`.
 - Using the WASD keys, walk up to the character and press Space to talk to them.
@@ -17,7 +17,7 @@ You can use your own save file from *Mass Effect 2: Legendary Edition* by follow
 - In Unity, select the Save File Loader object, and drag and drop your save into the the Save Data field.
 - Run the game again. Depending on the contents of the save file, you'll see different responses from the character when you talk to them.
 
-## Using Data in the Save File
+## Accessing Save Data
 
 After a save file has been loaded, Yarn Spinner scripts can access information contained within the save file. The `GeneratedVariables.yarn` file contains the list of all boolean and integer values stored in the Mass Effect 2 save game, as well as the Mass Effect 1 plot record (from any imported save game) embedded within the file.
 
@@ -39,29 +39,30 @@ NPC: Greetings, Commander {$player_name} Shepard!
 You can use the player's Paragon and Renegade scores to control whether conversation options are available. In the sample, the `#paragon` and `#renegade` hashtags will make the options display in a blue or red colour, respectively.
 
 ```
--> Paragon Choice <<if $LE2_Utility_Player_Info_Paragon > 600>> #paragon
--> Renegade Choice <<if $LE2_Utility_Player_Info_Renegade > 600>> #renegade
+-> Paragon Choice <<if $MassEffect2_PlayerInfo_ParagonPoints > 600>> #paragon
+-> Renegade Choice <<if $MassEffect2_PlayerInfo_RenegadePoints > 600>> #renegade
 -> Neutral Choice
 ```
 
 Some useful examples of variables:
 
 - The player's Paragon and Renegade score are available via the following variables:
-  - `$LE2_Utility_Player_Info_Paragon` stores the Paragon score.
-  - `$LE2_Utility_Player_Info_Renegade` stores the Renegade score.
+  - `$MassEffect2_PlayerInfo_ParagonPoints` stores the Paragon score.
+  - `$MassEffect2_PlayerInfo_RenegadePoints` stores the Renegade score.
 - To determine whether a character is a member of the squad or not, access the following variables:
-  - `$LE2_Utility_Henchmen_In_Squad_Vixen`
-  - `$LE2_Utility_Henchmen_In_Squad_Leading`
-  - `$LE2_Utility_Henchmen_In_Squad_Convict`
-  - `$LE2_Utility_Henchmen_In_Squad_Geth`
-  - `$LE2_Utility_Henchmen_In_Squad_Thief`
-  - `$LE2_Utility_Henchmen_In_Squad_Garrus`
-  - `$LE2_Utility_Henchmen_In_Squad_Assassin`
-  - `$LE2_Utility_Henchmen_In_Squad_Tali`
-  - `$LE2_Utility_Henchmen_In_Squad_Professor`
-  - `$LE2_Utility_Henchmen_In_Squad_Grunt`
-  - `$LE2_Utility_Henchmen_In_Squad_Mystic`
-  - `$LE2_Utility_Henchmen_In_Squad_Veteran`
+  - `$MassEffect2_Companions_Garrus_InSquad`
+  - `$MassEffect2_Companions_Grunt_InSquad`
+  - `$MassEffect2_Companions_Jack_InSquad`
+  - `$MassEffect2_Companions_Jacob_InSquad`
+  - `$MassEffect2_Companions_Kasumi_InSquad`
+  - `$MassEffect2_Companions_Legion_InSquad`
+  - `$MassEffect2_Companions_Miranda_InSquad`
+  - `$MassEffect2_Companions_Mordin_InSquad`
+  - `$MassEffect2_Companions_Samara_InSquad`
+  - `$MassEffect2_Companions_Tali_InSquad`
+  - `$MassEffect2_Companions_Thane_InSquad`
+  - `$MassEffect2_Companions_Wilson_InSquad`
+  - `$MassEffect2_Companions_Zaeed_InSquad`
   - There are similar variables for controlling whether a character's loyalty mission has been completed, or whether they have been killed.
 - Specific outcomes for storylines can be read. For example, the outcome of Tali's treason trial can be fetched via the following variables:
   - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Gave_Evidence`
@@ -69,7 +70,7 @@ Some useful examples of variables:
   - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Innocent_Charmed`
   - `$LE2_Loyalty_Missions_Tali_Loyalty_Trial_Resolution_Innocent_Intimidate`
 
-The names of the variables are taken from [Electronic Arts' release of the Mass Effect plot databases](https://github.com/electronicarts/MELE_ModdingSupport/). 
+The names of the variables are adapted from [Electronic Arts' release of the Mass Effect plot databases](https://github.com/electronicarts/MELE_ModdingSupport/). 
 
 ## Performance
 
